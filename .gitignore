@@ -220,3 +220,7 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,macos,windows,node
+
+# Ignore built ts files
+__tests__/runner/*
+lib/**/*

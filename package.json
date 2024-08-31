@@ -4,6 +4,11 @@
   "description": "Node.js API for basic CRUD operations for a shopping list",
   "main": "src/app.ts",
   "scripts": {
+    "build": "tsc && ncc build --source-map --license licenses.txt",
+    "package": "ncc build --source-map --license licenses.txt",
+    "format": "prettier --write '**/*.ts'",
+    "test": "jest",
+    "all": "npm run build && npm run format && npm run package && npm test",
     "start": "node src/app.js",
     "dev": "nodemon src/app.ts"
   },
@@ -19,8 +24,16 @@
     "express": "^4.19.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@babel/preset-typescript": "^7.24.7",
     "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@vercel/ncc": "^0.38.1",
+    "babel-jest": "^29.7.0",
     "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"
   }
