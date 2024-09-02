@@ -1,27 +1,6 @@
 # Shopping List API
 
-This is a TypeScript Node.js API project for basic CRUD operations for a shopping list. The items are indexed by a numeric key and store description, quantity, unit, and a checkbox to indicate whether the item has been purchased or not. The "Add" operation always has the checkbox unchecked. The data is stored in Azure Storage.
-
-## Project Structure
-
-```
-shopping-list-api
-├── src
-│   ├── controllers
-│   │   └── itemController.ts
-│   ├── models
-│   │   └── itemModel.ts
-│   ├── routes
-│   │   └── itemRoutes.ts
-│   ├── services
-│   │   └── azureStorageService.ts
-│   ├── app.ts
-│   └── config
-│       └── azureConfig.ts
-├── package.json
-├── tsconfig.json
-└── README.md
-```
+This is a TypeScript Node.js API project for basic CRUD operations for a shopping list. The items are indexed by a numeric key and store description, quantity, unit, and a checkbox to indicate whether the item has been purchased or not. The "Add" operation always has the checkbox unchecked. The data is stored in memory and designed for use with testing copilot apps.
 
 ## Files
 
@@ -37,17 +16,9 @@ This file exports an interface `Item` which represents the structure of a shoppi
 
 This file exports a function `setRoutes` which sets up the routes for the shopping list API. It maps the CRUD operations to the corresponding methods in the `ItemController`.
 
-### `src/services/azureStorageService.ts`
-
-This file exports a class `AzureStorageService` which handles the interaction with Azure Storage. It includes methods such as `connect`, `addItem`, `getItem`, `updateItem`, and `deleteItem` to perform CRUD operations on the shopping list items in Azure Storage.
-
 ### `src/app.ts`
 
 This file is the entry point of the application. It creates an instance of the Express app, sets up middleware, and registers the item routes.
-
-### `src/config/azureConfig.ts`
-
-This file exports an object `azureConfig` which contains the configuration settings for connecting to Azure Storage.
 
 ### `tsconfig.json`
 
@@ -82,4 +53,4 @@ Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUT
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [ISC License](LICENSE).
