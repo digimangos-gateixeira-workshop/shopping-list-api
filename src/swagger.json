@@ -2,8 +2,8 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "Item API",
-    "description": "API for managing items"
+    "title": "Shopping List API",
+    "description": "API for managing items on a shopping list"
   },
   "host": "localhost:3000",
   "basePath": "/",
