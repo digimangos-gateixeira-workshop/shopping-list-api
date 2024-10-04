@@ -1,16 +1,15 @@
 import express from "express";
 import { setRoutes } from "./routes/itemRoutes";
 import swaggerUi from "swagger-ui-express";
+import swaggerDocument from "./swagger.json";
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
-
-const swaggerDocument = require("./swagger.json");
-
-app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use(__dirname, express.static("public"));
+app.use("/api-docs", express.static('node_modules/swagger-ui-dist/', {index:false}), swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 // Register item routes
 setRoutes(app);
