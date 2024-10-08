@@ -2,8 +2,9 @@ import express from "express";
 import { ItemController } from "../controllers/itemController";
 
 export function setRoutes(app: express.Application) {
-
-  app.get("/", (req, res) => { return res.send("OK"); });
+  app.get("/", (req, res) => {
+    return res.send("OK");
+  });
 
   const itemController = new ItemController();
   app.post("/items", itemController.createItem);

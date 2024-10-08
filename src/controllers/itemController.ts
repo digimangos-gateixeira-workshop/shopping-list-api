@@ -33,13 +33,14 @@ export class ItemController {
   // Update an item
   public updateItem(req: Request, res: Response): void {
     const id = parseInt(req.params.id, 10);
-    const { description, quantity, unit, purchased } = req.body;
     const item = items.find((item) => item.id === id);
+
     if (item) {
-      item.description = description;
-      item.quantity = quantity;
-      item.unit = unit;
-      item.purchased = purchased;
+      Object.keys(req.body).forEach((key) => {
+        if (key !== "id" && item.hasOwnProperty(key)) {
+          (item as any)[key] = req.body[key];
+        }
+      });
       res.status(200).json(item);
     } else {
       res.status(404).json({ message: "Item not found" });
