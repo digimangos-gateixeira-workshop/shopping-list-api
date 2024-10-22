@@ -45,8 +45,7 @@ This file is the npm configuration, listing the dependencies and scripts for the
 
 1. Clone the repository.
 2. Install the dependencies using `npm install`.
-3. (Optional) Configure the Azure Storage settings in `src/config/azureConfig.ts`.
-4. Start the server using `npm start` or launch via the **Docker image**.
+3. Start the server using `npm run start` or launch via the **Docker image**.
 
 ## API Endpoints
 
